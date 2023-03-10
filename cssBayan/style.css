@@ -1,0 +1,62 @@
+body {
+  background-color: azure;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+img {
+  height: 200px;
+  width: 200px;
+
+}
+
+input {
+  position: static;
+  opacity: 0;
+  transition: 0.7s;
+}
+
+.mainBlock {
+  /* весь кусок */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+label {
+  /* содержит название мема*/
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  background: #333;
+  color: #fff;}
+
+
+.mem {
+  /* содержит картинку*/
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  max-height: 0;
+  background: rgb(92, 166, 210);
+  transition: all 0.5s;
+
+}
+
+input:checked~.mem {
+  /* содержит картинку после нажатия*/
+  max-height: 100vh;
+  padding: 1em;
+
+}
+
+input:hover~.mem {
+  max-height: 100vh;
+  padding: 1em;
+}
