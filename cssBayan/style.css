@@ -1,12 +1,12 @@
 body {
-  background-color: azure;
+  background-color: rgb(217, 244, 244);
   display: flex;
   flex-direction: column;
   height: 200vh;
   /* для отображ. скролла, чтобы не дергалось */
 }
 
-.container{
+.container {
   margin-left: 15%;
   margin-right: 15%;
 }
@@ -43,18 +43,18 @@ i {
 }
 
 /* появление всех плюсиков одновременно*/
-.container:hover i{
+.container:hover i {
   transition: 1s ease;
   opacity: 100%;
 }
 
-input:checked~label i {
+input:checked~.title i {
   rotate: 45deg;
   transition: 1s ease;
 }
 
 
-label {
+.title {
   /* содержит название мема*/
   display: flex;
   justify-content: space-between;
@@ -70,11 +70,12 @@ label {
 .mem {
   /* содержит картинку*/
   display: flex;
+  flex-direction: column;
+  align-items: center;
   flex-wrap: wrap;
-  align-self: center;
   max-height: 0;
+  width: 100%;
   opacity: 0;
-  background: rgb(92, 166, 210);
 }
 
 
@@ -83,23 +84,27 @@ label {
   max-height: 100%;
   opacity: 1;
   transition: 1s ease;
+  cursor: pointer;
 }
 
 /*цвет при наведении*/
 
- .container:hover label{
+.container:hover .title {
   color: rgb(250, 250, 250);
 }
-input:not(:checked)~label {
- color: #ef85da;
+
+input:not(:checked)~.title {
+  color: #ef85da;
 }
 
 
 /* нажатие и появл картинки*/
- input:checked~.mem {
+input:checked~.mem {
   max-height: 100vh;
   opacity: 1;
   transition: 1s ease;
 }
 
-
+.mem:active img {
+  opacity: 0.5;
+}
