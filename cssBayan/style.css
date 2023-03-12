@@ -11,9 +11,13 @@ body {
   margin-right: 15%;
 }
 
+h1 {
+  margin-left: 15%;
+}
+
 img {
-  height: 200px;
-  width: 200px;
+  height: 15em;
+  width: 15em;
 }
 
 input {
@@ -63,7 +67,7 @@ input:checked~.title i {
   cursor: pointer;
   background: #333;
   color: #fff;
-  border-top: 3px solid #6c91e0;
+  border-top: 3px solid #7c828e;
 }
 
 
@@ -83,7 +87,7 @@ input:checked~.title i {
 .mainBlock:hover .mem {
   max-height: 100%;
   opacity: 1;
-  transition: 1s ease;
+  transition: 1.38s ease;
   cursor: pointer;
 }
 
@@ -94,7 +98,7 @@ input:checked~.title i {
 }
 
 input:not(:checked)~.title {
-  color: #ef85da;
+  color: #d1f52e;
 }
 
 
@@ -102,7 +106,7 @@ input:not(:checked)~.title {
 input:checked~.mem {
   max-height: 100vh;
   opacity: 1;
-  transition: 1s ease;
+  transition: 1.38s ease;
 }
 
 .mem:active img {
