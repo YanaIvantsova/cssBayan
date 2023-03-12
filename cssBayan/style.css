@@ -1,0 +1,165 @@
+body {
+  background-color: rgb(217, 244, 244);
+  display: flex;
+  flex-direction: column;
+  height: 200vh;
+}
+
+.container {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+h1 {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+img {
+  height: 20em;
+  width: 20em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+input {
+  position: static;
+  display: none;
+}
+
+.mainBlock {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  font-weight: bold;
+  font-size: 1.8em;
+  cursor: pointer;
+  background: #333;
+  color: #fff;
+  border-top: 3px solid #7c828e;
+}
+
+.mem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  max-height: 0;
+  width: 100%;
+  opacity: 0;
+}
+
+i {
+  transition: 1s ease;
+  opacity: 0;
+  color: #fff;
+}
+
+input:not(:checked)~.title {
+  color: #d1f52e;
+}
+
+input:checked~.mem {
+  max-height: 100vh;
+  opacity: 1;
+  transition: 1.38s ease;
+}
+
+.mem:active img {
+  opacity: 0.5;
+}
+
+.mainBlock:active .title ,.mainBlock:active .title i {
+  color: #d1f52e;
+}
+
+
+@media(max-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .container {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .title {
+    font: normal 1.2em/1em Verdana, sans-serif;
+    text-align: center;
+  }
+
+  img {
+    width: 10em;
+    height: 10em;
+  }
+}
+
+input:checked~.title i{
+  rotate: 45deg;
+}
+
+
+@media(min-width:769px) and (max-width: 1024px) {
+  h1 {
+    font-size: 3em;
+  }
+
+  .title {
+    font-size: 2.5em;
+    text-align: center;
+  }
+
+  img {
+    width: 25em;
+    height: 25em;
+  }
+}
+
+@media (hover: hover) {
+
+  .mainBlock:hover #title i {
+    rotate: 45deg;
+    transition: 0.3s ease;
+    opacity: 100%;
+  }
+
+  .container:hover i {
+    transition: 0.3s ease;
+    opacity: 100%;
+  }
+
+  .container:hover label{
+    color: rgb(250, 250, 250);
+  }
+
+  .mainBlock:hover .mem {
+    max-height: 100%;
+    opacity: 1;
+    transition: 1.38s ease;
+    cursor: pointer;
+  }
+}
+
+
+@media (hover:none) {
+  input:checked~.title i {
+    rotate: 45deg;
+    opacity: 100%;
+    transition: 0.3s ease;
+  }
+
+  input:not(:checked)~.title i{
+    rotate: 0deg;
+    opacity: 100%;
+    transition: 0.3s ease;
+    color: #d1f52e;
+  }
+}
